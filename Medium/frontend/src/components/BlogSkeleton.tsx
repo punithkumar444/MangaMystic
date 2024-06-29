@@ -1,29 +1,33 @@
-import { Circle } from "./BlogCard"
+import { Circle } from "./BlogCard";
 
 export const BlogSkeleton = () => {
-    return <div role="status" className="animate-pulse">
-        <div className="p-4 border-b border-slate-200 pb-4 w-screen max-w-screen-md cursor-pointer">
-            <div className="flex">
-                <div className="h-4 w-4 bg-gray-200 rounded-full w-48 mb-4"></div>
-                <div className="h-2 bg-gray-200 rounded-full mb-2.5"></div>
-                <div className="h-2 bg-gray-200 rounded-full mb-2.5"></div>
-                <div className="flex justify-center flex-col pl-2 flex justify-center flex-col">
-                    <Circle />
-                </div>
-                <div className="pl-2 font-thin text-slate-500 text-sm flex justify-center flex-col">
-                    <div className="h-2 bg-gray-200 rounded-full mb-2.5"></div>
-                </div>
+  return (
+    <div role="status" className="animate-pulse">
+      <div className="bg-gray-900 border border-gray-700 w-85 h-70 cursor-pointer rounded-lg shadow-lg overflow-hidden flex flex-col">
+        {/* Skeleton for Image */}
+        <div className="h-1/2 w-full bg-gray-700 animate-pulse"></div>
+        <div className="h-1/2 w-full p-4 flex flex-col justify-between">
+          {/* Skeleton for Title */}
+          <div className="h-6 bg-gray-700 rounded-full mb-2 animate-pulse"></div>
+          {/* Skeleton for Description */}
+          <div className="h-4 bg-gray-700 rounded-full mb-2 animate-pulse"></div>
+          <div className="h-4 bg-gray-700 rounded-full mb-2 animate-pulse"></div>
+          <div className="h-4 bg-gray-700 rounded-full mb-2 animate-pulse"></div>
+          <div className="flex items-center text-gray-400 mt-4">
+            <div className="pr-2">
+              <Circle />
             </div>
-            <div className="text-xl font-semibold pt-2">
-                <div className="h-2 bg-gray-200 rounded-full mb-2.5"></div>
+            {/* Skeleton for Author Name */}
+            <div className="h-4 bg-gray-700 rounded-full w-16 mb-2 animate-pulse"></div>
+            <div className="pl-2 flex flex-col justify-center">
+              <Circle />
             </div>
-            <div className="text-md font-thin">
-                <div className="h-2 bg-gray-200 rounded-full mb-2.5"></div>
-            </div>
-            <div className="text-slate-500 text-sm font-thin pt-4">
-                <div className="h-2 bg-gray-200 rounded-full mb-2.5"></div>
-            </div>
+            {/* Skeleton for Date */}
+            <div className="h-4 bg-gray-700 rounded-full w-24 mb-2 animate-pulse"></div>
+          </div>
         </div>
-    <span className="sr-only">Loading...</span>
-</div>
-}
+      </div>
+      <span className="sr-only">Loading...</span>
+    </div>
+  );
+};

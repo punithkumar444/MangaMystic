@@ -1,43 +1,46 @@
-import { Blog } from "../hooks"
-import { Appbar } from "./AppBar"
-import { Avatar } from "./BlogCard"
+import { Blog } from "../hooks";
+import { Appbar } from "./AppBar";
+import { Avatar } from "./BlogCard";
 
-export const FullBlog = ({ blog }: {blog: Blog}) => {
-    return <div>
-        <Appbar />
-        <div className="flex justify-center">
-            <div className="grid grid-cols-12 px-10 w-full pt-200 max-w-screen-xl pt-12">
-                <div className="col-span-8">
-                    <div className="text-5xl font-extrabold">
-                        {blog.title}
-                    </div>
-                    <div className="text-slate-500 pt-2">
-                        Post on 2nd December 2023
-                    </div>
-                    <div className="pt-4">
-                        {blog.content}
-                    </div>
-                </div>
-                <div className="col-span-4">
-                    <div className="text-slate-600 text-lg">
-                        Author
-                    </div>
-                    <div className="flex w-full">
-                        <div className="pr-4 flex flex-col justify-center">
-                            <Avatar size="big" name={blog.author.name || "Anonymous"} />
-                        </div>
-                        <div>
-                            <div className="text-xl font-bold">
-                                {blog.author.name || "Anonymous"}
-                            </div>
-                            <div className="pt-2 text-slate-500">
-                                Random catch phrase about the author's ability to grab the user's attention
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-                
+export const FullBlog = ({ blog }: { blog: Blog }) => {
+  return (
+    <div className="bg-gray-900 text-gray-300 min-h-screen">
+      <Appbar />
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Blog Content */}
+          <div className="lg:col-span-1">
+            <div className="text-4xl font-extrabold text-yellow-400 mb-4">
+              {blog.title}
             </div>
+            <div className="text-slate-500 text-sm mb-4">
+              Posted on 2nd Feb 2024
+            </div>
+            <div className="text-lg leading-relaxed mb-8">
+              {blog.content}
+            </div>
+          </div>
+          {/* Author Info */}
+          <div className="lg:col-span-1 flex flex-col items-center lg:items-start">
+            <div className="text-slate-600 text-lg font-semibold mb-4">
+              Author
+            </div>
+            <div className="flex items-center">
+              <div className="pr-4">
+                <Avatar size="big" name={blog.author.name || "Anonymous"} />
+              </div>
+              <div>
+                <div className="text-xl font-bold mb-1">
+                  {blog.author.name || "Anonymous"}
+                </div>
+                <div className="text-slate-500 text-sm">
+                Unleash Your Inner Otaku - Join Us Now
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-}
+  );
+};
